@@ -1,7 +1,7 @@
 # Basketball Teams Web Application
 
 
-🇮🇹
+:flag_italy:
 
 
 ## Descrizione
