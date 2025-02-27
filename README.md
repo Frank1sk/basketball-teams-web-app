@@ -1,9 +1,7 @@
 # Basketball Teams Web Application
 
 
-:flag_italy:
-
-
+## Italian version
 ## Descrizione
 Il progetto è una web application interattiva dedicata alla visualizzazione e all’esplorazione delle squadre NBA.
 
@@ -36,9 +34,7 @@ Il progetto è una web application interattiva dedicata alla visualizzazione e a
 Questo progetto è rilasciato sotto la licenza [MIT](LICENSE).
 
 
-🇬🇧 
-
-
+## English version
 ## Description
 The project is an interactive web application dedicated to displaying and exploring NBA teams.
 
