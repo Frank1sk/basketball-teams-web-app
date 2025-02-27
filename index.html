@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore NBA Teams</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>NBA Teams</h1>
+      <nav>
+        <div class="dropdown">
+          <button
+            id="dropdownToggle"
+            class="nav-btn"
+            aria-label="Open conference filter menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="4 4 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+              style="width: 20px; height: 20px;"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
+              />
+            </svg>
+          </button>
+          <div id="dropdownMenu" class="dropdown-content">
+            <button
+              id="west-dd"
+              class="nav-btn"
+              aria-label="Filter teams by Western Conference"
+            >
+              Western Conference
+            </button>
+            <button
+              id="east-dd"
+              class="nav-btn"
+              aria-label="Filter teams by Eastern Conference"
+            >
+              Eastern Conference
+            </button>
+            <form id="searchForm-dd">
+              <input
+                type="text"
+                id="searchInput-dd"
+                placeholder="Search for a team..."
+                aria-label="Search for a team by name"
+              />
+            </form>
+          </div>
+        </div>
+
+        <button
+          id="west"
+          class="nav-btn laptop"
+          aria-label="Filter teams by Western Conference"
+        >
+          Western Conference
+        </button>
+        <button
+          id="east"
+          class="nav-btn laptop"
+          aria-label="Filter teams by Eastern Conference"
+        >
+          Eastern Conference
+        </button>
+        <form id="searchForm">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a team..."
+            aria-label="Search for a team by name"
+          />
+        </form>
+      </nav>
+    </header>
+
+    <!-- Sezione principale del contenuto -->
+    <main>
+      <!-- Sezione per la lista dei team -->
+      <section id="teams">
+        <!-- I dati verranno generati dinamicamente dallo script -->
+      </section>
+    </main>
+
+    <!-- Contenuto accessorio (es. informazioni extra o link correlati) -->
+    <aside id="teamDetails"></aside>
+
+    <!-- Pulsante "Torna in cima" con icona freccia verso l'alto -->
+    <button id="scrollToTopBtn" class="circular-btn">
+      <!-- Icona freccia da Heroicons -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 -4 24 24"
+        stroke="currentColor"
+        aria-label="Scroll to the top of the page"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7-7-7 7"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <p>This project is a fan-made web application dedicated to exploring NBA teams. It is not affiliated with, endorsed, or sponsored by the NBA. All trademarks belong to their respective owners.</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

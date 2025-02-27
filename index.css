@@ -1,0 +1,291 @@
+:root {
+  --nba-blue: #006bb6; /* Blu simile al logo della NBA */
+  --nba-dark-blue: #00497a; /* Blu più scuro */
+  --nba-red: #e4002b; /* Rosso simile al logo NBA */
+  --nba-dark-red: #b80022; /* Rosso più scuro */
+  --white: #ffffff; /* Bianco */
+  --black: #000000; /* Nero */
+  --light-gray: #cccccc; /* Grigio chiaro */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--nba-blue);
+  color: var(--white);
+}
+
+header {
+  display: flex; /* Layout flessibile per affiancare gli elementi */
+  align-items: center; /* Allinea verticalmente al centro */
+  justify-content: space-between; /* Spazia gli elementi per occupare l'intera larghezza */
+  background-color: var(--nba-dark-blue);
+  color: var(--white);
+}
+
+nav {
+  flex: 1; /* Occupa dinamicamente spazio rimanente */
+  text-align: right; /* Allinea il contenuto a destra */
+  display: flex;
+  justify-content: end;
+}
+
+main {
+  flex: 1;
+}
+
+aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(100%); /* L'aside è nascosto inizialmente */
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none; /* Disabilita l'interazione quando è nascosto */
+}
+
+aside.active {
+  transform: translateX(0); /* L'aside si muove sulla vista */
+  opacity: 1;
+  pointer-events: auto; /* Permette l'interazione quando visibile */
+}
+
+footer {
+  background-color: var(--nba-dark-blue);
+}
+
+footer p, h1 {
+  margin-left: 10px;
+}
+
+header, footer {
+  padding: 10px;
+}
+
+.nav-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 3px solid var(--nba-dark-red);
+  background-color: var(--nba-red);
+  color: var(--white);
+}
+
+.nav-btn:hover {
+  background-color: var(--nba-dark-red);
+}
+
+/* Stile per la barra di ricerca */
+#searchForm {
+  display: inline-block; /* Impedisce al form di allungarsi orizzontalmente */
+  align-items: center;
+}
+
+#searchInput {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--light-gray);
+  border-radius: 20px;
+  width: 200px;
+  outline: none;
+}
+
+/* Contenitore delle squadre */
+#teams {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne dinamiche */
+  gap: 20px; /* Distanza tra gli elementi */
+  padding: 20px;
+}
+
+/* Squadre */
+.team {
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--black);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+.team:hover {
+  transform: scale(1.05); /* Ingrandimento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombreggiatura */
+}
+
+.team img {
+  max-width: 100px;
+}
+
+.team h2 {
+  margin: 10px 0;
+}
+
+/* Pulsanti circolari */
+.circular-btn {
+  background-color: var(--nba-red);
+  border: none;
+  border-radius: 50%; /* Forma circolare */
+  display: flex;
+  justify-content: center; /* Centra l'icona orizzontalmente */
+  align-items: center; /* Centra l'icona verticalmente */
+  cursor: pointer;
+}
+
+.circular-btn:hover {
+  background-color: var(--nba-dark-red);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombreggiatura */
+}
+
+/* Pulsante "Torna in cima" */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px; /* Aumenta la dimensione dell'icona */
+  color: var(--white);
+  display: none; /* Il pulsante è nascosto per default */
+}
+
+/* Pulsante "Chiudi aside" */
+#closeAside {
+  position: absolute; /* Per posizionarlo facilmente */
+  width: 40px; /* Dimensione del pulsante */
+  height: 40px; /* Dimensione del pulsante */
+  top: 10px;
+  right: 10px;
+}
+
+.dropdown{
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  /* Stile del menu a tendina */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#searchForm-dd {
+  display: none;
+}
+
+#dropdownToggle{
+  height: 40px;
+  width: 40px;
+}
+
+.nav-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 3px solid var(--nba-dark-red);
+  background-color: var(--nba-red);
+  color: var(--white);
+}
+
+.nav-btn:hover {
+  background-color: var(--nba-dark-red);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--nba-dark-blue);
+  border: 1px solid var(--nba-dark-blue);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.dropdown-content button {
+  margin: 5px 40px 5px 5px;
+  background-color: var(--nba-red);
+  color: var(--white);
+  border: 3px solid var(--nba-dark-red);
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: var(--nba-dark-red);
+}
+
+.dropdown-content.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+  .laptop{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #searchForm{
+    display: none;
+  }
+
+  .dropdown-content {
+    position: absolute;
+  top: 100%; /* Posiziona il menu direttamente sotto il pulsante */
+  right: 50%; /* Allinea il lato destro del menu al lato destro del pulsante */
+  left: unset;
+  }
+  #searchForm-dd {
+    display: inline-block;
+  }
+
+  #searchForm-dd {
+    display: inline-block; /* Impedisce al form di allungarsi orizzontalmente */
+    align-items: center;
+  }
+  
+  #searchInput-dd {
+    margin: 5px 10px 5px 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+  }
+}
